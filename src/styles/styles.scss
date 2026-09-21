@@ -1,1 +1,380 @@
 @use "modern-normalize";
+@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
+
+
+:root {
+  // colors light theme
+  --color-text-primary: #403f3d;
+  --color-text-inverse: #e1d4c9;
+  --color-text-accent: #b0907a;
+  --color-bg-page: #e1d4c9;
+  --color-bg-container: #665f55;
+  --color-bg-overlay: #403f3d;
+  --color-border-primary: #c1b6ad;
+  --color-border-inverse: #665f55;
+
+  // fonts
+  --font-family-base: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.title__accent {
+  font-style: italic;
+  color: var(--color-text-accent);
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 100px;
+  border-radius: 40px;
+  margin-bottom: 100px;
+}
+
+.hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 530px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.hero__title {
+  color: var(--color-text-inverse);
+}
+
+.hero__description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-inverse);
+}
+
+.hero__btn {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  width: 100%;
+  max-width: 200px;
+  padding: 16px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.favorites {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.favorites__title {
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.favorites__slider {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.favorites__slide {
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.slide__image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.slide__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slide__price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.about {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.about__title {
+  width: 100%;
+}
+
+.about__collage {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  height: 1060px;
+  gap: 40px;
+}
+
+.about__collage-item {
+  width: calc((100% - 40px) / 2);
+  border-radius: 20px;
+  overflow: hidden;
+
+  &:nth-child(1),
+  &:nth-child(4) {
+    height: 590px;
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    height: 430px;
+  }
+}
+
+.about__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mobile-app {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+
+.mobile-app__content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile-app__image {
+  width: 50%;
+  max-width: 630px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.mobile-app__title {
+  max-width: 530px;
+}
+
+.mobile-app__description {
+  max-width: 630px;
+}
+
+.mobile-app__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.mobile-app__btn {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-inverse);
+  border-radius: 40px;
+  padding: 5px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  transition: opacity 0.2s ease, color 0.3s ease, background-color 0.3s ease;
+
+  &:hover,
+  &:active {
+    color: var(--color-text-inverse);
+    background-color: var(--color-border-inverse);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.mobile-app__btn-text {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 60px;
+  }
+
+  .about__collage {
+    height: auto;
+    flex-flow: column nowrap;
+    gap: 40px;
+  }
+
+  .about__collage-item {
+    width: 100%;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      height: 590px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+
+  .mobile-app {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+  }
+
+  .mobile-app__content {
+    width: 100%;
+  }
+
+  .mobile-app__title,
+  .mobile-app__description {
+    max-width: 100%;
+  }
+
+  .mobile-app__image {
+    width: 100%;
+    max-width: 630px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 42px;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 60px 16px;
+    margin-bottom: 40px;
+  }
+
+  .favorites,
+  .about,
+  .mobile-app {
+    margin-bottom: 40px;
+  }
+
+  .mobile-app {
+    gap: 40px;
+  }
+
+  .mobile-app__btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .mobile-app__btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}

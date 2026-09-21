@@ -1,19 +1,166 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./src/styles/styles.scss" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header"></header>
     <main class="main">
-        <h1>Landing Page</h1>
+      <div class="container">
+        <section class="hero">
+          <video
+            class="hero__video"
+            autoplay
+            loop
+            muted
+            playsinline
+            poster="./src/images/hero/img-hero.jpg"
+            width="100%"
+            height="100%"
+          >
+            <source src="./src/videos/video-hero.mp4" type="video/mp4" />
+          </video>
+          <div class="hero__content">
+            <h1 class="hero__title">
+              <em class="title__accent">Enjoy</em> premium coffee at our
+              charming cafe
+            </h1>
+            <p class="hero__description">
+              With its inviting atmosphere and delicious coffee options, the
+              Coffee House Resource is a popular destination for coffee lovers
+              and those seeking a warm and inviting space to enjoy their
+              favorite beverage.
+            </p>
+            <a class="hero__btn" href="#">Menu</a>
+          </div>
+        </section>
+        <section class="favorites">
+          <h2 class="favorites__title">
+            Choose your <em class="title__accent">favorite</em> coffee
+          </h2>
+          <div class="favorites__slider">
+            <div class="favorites__slide">
+              <div class="slide__image-wrapper">
+                <img
+                  class="slide__image"
+                  src="./src/images/favorites/coffee-slider-1.png"
+                  alt="S’mores Frappuccino"
+                  width="480"
+                  height="480"
+                />
+              </div>
+
+              <h3 class="slide__name">S’mores Frappuccino</h3>
+              <p class="slide__description">
+                This new drink takes an espresso and mixes it with brown sugar
+                and cinnamon before being topped with oat milk.
+              </p>
+              <div class="slide__price">$5.50</div>
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <h2 class="about__title">
+            Resource is
+            <em class="title__accent">the perfect and cozy place</em> where you
+            can enjoy a variety of hot beverages, relax, catch up with friends,
+            or get some work done.
+          </h2>
+          <ul class="about__collage">
+            <li class="about__collage-item">
+              <img
+                class="about__image"
+                src="./src/images/about/about-1.jpg"
+                alt="guest_1"
+                width="660"
+                height="590"
+              />
+            </li>
+            <li class="about__collage-item">
+              <img
+                class="about__image"
+                src="./src/images/about/about-2.jpg"
+                alt="guest_2"
+                width="480"
+                height="430"
+              />
+            </li>
+            <li class="about__collage-item">
+              <img
+                class="about__image"
+                src="./src/images/about/about-3.jpg"
+                alt="guest_3"
+                width="430"
+                height="430"
+              />
+            </li>
+            <li class="about__collage-item">
+              <img
+                class="about__image"
+                src="./src/images/about/about-4.jpg"
+                alt="guest_4"
+                width="590"
+                height="590"
+              />
+            </li>
+          </ul>
+        </section>
+        <section class="mobile-app">
+          <div class="mobile-app__content">
+            <h2 class="mobile-app__title">
+              <em class="title__accent">Download</em> our app to start ordering
+            </h2>
+            <p class="mobile-app__description">
+              Download the Resource app today and experience the comfort of
+              ordering your favorite coffee from wherever you are
+            </p>
+            <div class="mobile-app__btns">
+              <button class="mobile-app__btn" type="button">
+                <img
+                  src="./src/images/svg/apple.svg"
+                  alt="apple"
+                  width="36"
+                  height="36"
+                />
+                <div>
+                  <p class="mobile-app__btn-text">Available on the</p>
+                  <span>App Store</span>
+                </div>
+              </button>
+              <button class="mobile-app__btn" type="button">
+                <img
+                  src="./src/images/svg/google-play.svg"
+                  alt="google play"
+                  width="36"
+                  height="36"
+                />
+                <div>
+                  <p class="mobile-app__btn-text">Available on</p>
+                  <span>Google Play</span>
+                </div>
+              </button>
+            </div>
+          </div>
+          <img
+            class="mobile-app__image"
+            src="./src/images/mobile-app/mobile-screens.png"
+            alt="mobile app"
+            width="630"
+            height="630"
+          />
+        </section>
+      </div>
     </main>
     <footer class="footer"></footer>
-</body>
-
+  </body>
 </html>
