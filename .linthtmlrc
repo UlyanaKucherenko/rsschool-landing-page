@@ -1,0 +1,10 @@
+{
+  "extends": "linthtml-config-htmlacademy",
+  "rules": {
+    "line-max-len": [true, 120],
+    "htmlacademy/req-preload-font": false,
+    "indent-style": [true, "spaces"],
+    "indent-width": [true, 2],
+     "no-surrounding-whitespace": false
+  }
+}

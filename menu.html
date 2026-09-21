@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee House | Menu</title>
+    <link rel="icon" type="image/svg+xml" href="./src/images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./src/styles/styles.scss" />
+    <link rel="stylesheet" href="./src/styles/menu.scss" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <a href="./index.html">
+          <img src="./src/images/svg/logo.svg" alt="logo" width="100" height="100" />
+        </a>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav__list">
+          <li class="header__nav__list-item"><a class="header__nav__link" href="./index.html#favorites">Favorite coffee</a></li>
+          <li class="header__nav__list-item"><a class="header__nav__link" href="./index.html#about">About</a></li>
+          <li class="header__nav__list-item"><a class="header__nav__link" href="./index.html#mobile-app">Mobile app</a></li>
+          <li class="header__nav__list-item"><a class="header__nav__link" href="#contact-us">Contact us</a></li>
+        </ul>
+      </nav>
+      <div class="header__theme-toggle">
+        <button
+          class="header__theme-toggle__btn header__theme-toggle__btn--light"
+          type="button"
+          aria-label="Light theme"
+        >
+          <span class="visually-hidden">Light theme</span>
+          <img src="./src/images/svg/light.svg" alt="light" width="24" height="24" />
+        </button>
+        <button
+          class="header__theme-toggle__btn header__theme-toggle__btn--dark"
+          type="button"
+          aria-label="Dark theme"
+        >
+          <span class="visually-hidden">Dark theme</span>
+          <img src="./src/images/svg/dark.svg" alt="dark" width="24" height="24" />
+        </button>
+      </div>
+
+      <a class="header__menu-btn" href="./menu.html">
+        <span class="header__menu-btn__text">Menu</span>
+        <img src="./src/images/svg/coffee-cup.svg" alt="coffee cup" width="24" height="24" />
+      </a>
+      <button class="header__burger-btn" type="button" aria-label="Open menu">
+        <span class="visually-hidden">Open menu</span>
+        <img src="./src/images/svg/burger.svg" alt="burger menu" width="44" height="44" />
+      </button>
+    </header>
+    <main class="main">
+      <div class="container">
+          <h2 class="title">Behind each of our cups hides an <em class="title__accent">amazing surprise</em></h2>
+    <div class="tabs-control">  
+      <button class="tabs-control__button" type="button"> <img src="./src/images/menu-page/coffee-icon.png" alt="coffee-icon" width="24" height="24" />Coffee</button>
+      <button class="tabs-control__button" type="button"> <img src="./src/images/menu-page/tea-icon.png" alt="tea-icon" width="24" height="24" />Tea</button>
+      <button class="tabs-control__button" type="button"> <img src="./src/images/menu-page/dessert-icon.png" alt="dessert-icon" width="24" height="24" />Dessert</button>
+    </div>
+
+    <div class="tabs-content" id="tab-1">
+      <ul class="tabs-content__list">
+        <li class="tabs-content__item">
+          <div class="tabs-content__item-image-wrapper">
+            <img src="./src/images/menu-page/coffee-1.png" alt="coffee-1" width="24" height="24" />
+          </div>
+          <div class="tabs-content__item-wrapper">
+            <h3 class="tabs-content__item__text-wrapper__title">Irish coffee</h3>
+            <p class="tabs-content__item__text-wrapper__text">
+              A timeless Italian coffee classic, known for its rich flavor and aroma.
+            </p>
+            <span class="tabs-content__item__text-wrapper__price">$7.00</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+   
+     
+    
+      </div>
+    </main>
+    <footer class="footer" id="contact-us">
+      <div class="container">
+        <div class="footer__content">
+          <div>
+            <h2 class="footer__title">
+              Sip, Savor, Smile. <br />
+              <em class="title__accent"> It’s coffee time!</em>
+            </h2>
+            <div class="footer__social-links">
+              <a href="#"><img src="./src/images/svg/twitter.svg" alt="twitter" width="60" height="60" /></a>
+              <a href="#"><img src="./src/images/svg/instagram.svg" alt="instagram" width="60" height="60" /></a>
+              <a href="#"><img src="./src/images/svg/facebook.svg" alt="facebook" width="60" height="60" /></a>
+            </div>
+          </div>
+          <div class="footer__contact-info">
+            <h3>Contact us</h3>
+            <ul class="footer__contact-info__list">
+              <li class="footer__contact-info__item">
+                <img src="./src/images/svg/location.svg" width="20" height="20" alt="location" />
+                <address>8558 Green Rd., LA</address>
+              </li>
+              <li class="footer__contact-info__item">
+                <img src="./src/images/svg/phone.svg" width="20" height="20" alt="phone" />
+                <a href="tel:+16035550123">+1 (603) 555-0123</a>
+              </li>
+              <li class="footer__contact-info__item">
+                <img src="./src/images/svg/clock.svg" width="20" height="20" alt="clock" />
+                <span>Mon–Sat: 9:00–23:00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./src/js/theme.js"></script>
+  </body>
+</html>
