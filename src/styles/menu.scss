@@ -1,9 +1,8 @@
-
 .title {
   text-align: center;
   max-width: 800px;
   margin: 0 auto 40px;
-  color: var(--color-text-primary);
+  color: var(--color-text-primary);   
 
   &__accent {
     font-style: italic;
@@ -50,7 +49,6 @@
       border-color: var(--color-bg-overlay);
       cursor: default;
     }
-
   }
 }
 
