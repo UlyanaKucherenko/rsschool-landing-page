@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee House</title>
+    <link rel="icon" type="image/svg+xml" href="./src/images/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link rel="stylesheet" href="./src/styles/styles.scss" />
@@ -62,8 +63,6 @@
             muted
             playsinline
             poster="./src/images/hero/img-hero.jpg"
-            width="100%"
-            height="100%"
           >
             <source src="./src/videos/video-hero.mp4" type="video/mp4" />
           </video>
@@ -131,17 +130,17 @@
             <div class="mobile-app__btns">
               <button class="mobile-app__btn" type="button">
                 <img src="./src/images/svg/apple.svg" alt="apple" width="36" height="36" />
-                <div>
-                  <p class="mobile-app__btn-text">Available on the</p>
+                <span class="mobile-app__btn-info">
+                  <span class="mobile-app__btn-text">Available on the</span>
                   <span>App Store</span>
-                </div>
+                </span>
               </button>
               <button class="mobile-app__btn" type="button">
                 <img src="./src/images/svg/google-play.svg" alt="google play" width="36" height="36" />
-                <div>
-                  <p class="mobile-app__btn-text">Available on</p>
+                <span class="mobile-app__btn-info">
+                  <span class="mobile-app__btn-text">Available on</span>
                   <span>Google Play</span>
-                </div>
+                </span>
               </button>
             </div>
           </div>
@@ -171,7 +170,7 @@
           </div>
           <div class="footer__contact-info">
             <h3>Contact us</h3>
-            <ul class="footer__contact-info__list" type="none">
+            <ul class="footer__contact-info__list">
               <li class="footer__contact-info__item">
                 <img src="./src/images/svg/location.svg" width="20" height="20" alt="location" />
                 <address>8558 Green Rd., LA</address>
@@ -182,7 +181,7 @@
               </li>
               <li class="footer__contact-info__item">
                 <img src="./src/images/svg/clock.svg" width="20" height="20" alt="clock" />
-                <time datetime="Mon–Sat: 9:00–23:00">Mon–Sat: 9:00–23:00</time>
+                <span>Mon–Sat: 9:00–23:00</span>
               </li>
             </ul>
           </div>

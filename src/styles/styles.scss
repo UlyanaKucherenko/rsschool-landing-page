@@ -439,6 +439,12 @@ h3 {
       outline: none;
     }
 
+    &-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
     &-text {
       font-size: 10px;
       font-weight: 600;
