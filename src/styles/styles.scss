@@ -15,6 +15,14 @@
 
   // fonts
   --font-family-base: "Inter", sans-serif;
+
+  // colors dark theme
+  &.dark {
+    --color-text-primary: #e1d4c9;
+    --color-bg-page: #292825;
+    --color-border-primary: #665f55;
+    --color-border-inverse: #c1b6ad;
+  }
 }
 
 * {
@@ -98,7 +106,58 @@ h3 {
 .header__theme-toggle {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  align-items: center;
+  gap: 8px;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      opacity 0.2s ease;
+
+    img {
+      display: block;
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+    }
+
+    &:hover:not(.active) {
+      opacity: 0.7;
+    }
+
+    &.active {
+      cursor: default;
+    }
+
+    &--light.active {
+      background-color: #403f3d;
+    }
+
+    &--dark.active {
+      background-color: #e1d4c9;
+    }
+  }
+}
+
+:root.dark {
+  .header__menu-btn img,
+  .header__burger-btn img {
+    filter: invert(1);
+  }
+
+  .header__logo img {
+    filter: brightness(2) contrast(0.9);
+  }
 }
 
 .header__menu-btn {
