@@ -21,6 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -53,6 +54,89 @@ h3 {
 .title__accent {
   font-style: italic;
   color: var(--color-text-accent);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-bg-page);
+  min-height: 60px;
+  padding: 0 40px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header__nav__list {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.header__nav__list-item {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.header__nav__link {
+  text-decoration: none;
+  color: var(--color-text-primary);
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+
+.header__theme-toggle {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.header__menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.header__burger-btn {
+  display: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 .container {
@@ -290,7 +374,109 @@ h3 {
   text-align: left;
 }
 
+.footer {
+  padding-bottom: 40px;
+}
+
+.footer__content {
+  background-color: var(--color-bg-container);
+  color: var(--color-text-inverse);
+  padding: 100px 40px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+}
+
+.footer__title {
+  max-width: 530px;
+  margin-bottom: 40px;
+}
+
+.footer__social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.footer__social-links a:hover {
+  opacity: 0.8;
+}
+
+.footer__contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 468px;
+
+  address {
+    font-style: normal;
+  }
+}
+
+.footer__contact-info__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__contact-info__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__contact-info__item-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  border-radius: 50%;
+}
+
+.footer__contact-info a {
+  color: var(--color-text-inverse);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+}
+
 @media (max-width: 768px) {
+  .header {
+    padding: 20px 40px;
+    gap: 16px;
+  }
+
+  .header__nav,
+  .header__menu-btn {
+    display: none;
+  }
+
+  .header__theme-toggle {
+    margin-left: auto;
+  }
+
+  .header__burger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__logo img {
+    width: 80px;
+    height: 80px;
+  }
+
   .hero {
     padding: 100px 60px;
   }
@@ -305,8 +491,8 @@ h3 {
     width: 100%;
 
     &:nth-child(1),
-    &:nth-child(2) {
-      height: 590px;
+    &:nth-child(4) {
+      height: 350px;
     }
 
     &:nth-child(2),
@@ -335,6 +521,21 @@ h3 {
     max-width: 630px;
     margin: 0 auto;
   }
+
+  .footer__content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 60px;
+    gap: 100px;
+  }
+
+  .footer__title {
+    max-width: 100%;
+  }
+
+  .footer__contact-info {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -350,6 +551,19 @@ h3 {
 
   .container {
     padding: 0 16px;
+  }
+
+  .header {
+    padding: 16px;
+  }
+
+  .header__logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header__theme-toggle {
+    gap: 12px;
   }
 
   .hero {
@@ -376,5 +590,30 @@ h3 {
   .mobile-app__btn {
     width: 100%;
     max-width: 200px;
+  }
+
+  .footer {
+    padding-bottom: 40px;
+  }
+
+  .footer__content {
+    padding: 60px 16px;
+    gap: 40px;
+  }
+
+  .footer__title {
+    margin-bottom: 40px;
+  }
+
+  .footer__contact-info {
+    gap: 20px;
+  }
+
+  .footer__contact-info__list {
+    gap: 16px;
+  }
+
+  .footer__contact-info__item {
+    align-items: center;
   }
 }
