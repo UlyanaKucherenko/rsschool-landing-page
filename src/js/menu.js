@@ -1,13 +1,26 @@
 const tabsContentList = document.querySelector('.tabs-content__list');
 const tabsControl = document.querySelector('.tabs-control');
 const tabButtons = document.querySelectorAll('.tabs-control__button');
+const btnLoad = document.querySelector('.tabs-content__btn-load');
 let allProducts = [];
 let currentCategory = 'coffee';
+let isLoaded = false;
 
-function filterProducts(category) {
-  const filtered = allProducts.filter((item) => item.category === category);
-  renderProducts(filtered);
+const isMobile = () => window.innerWidth <= 768;
+
+function updateProducts() {
+  const products = allProducts.filter((item) => item.category === currentCategory);
+  const shouldLimit = isMobile() && !isLoaded;
+  const visibleProducts = shouldLimit ? products.slice(0, 4) : products;
+  renderProducts(visibleProducts);
+
+  if (shouldLimit && products.length > 4) {
+    btnLoad.classList.add('visible');
+  } else {
+    btnLoad.classList.remove('visible');
+  }
 }
+
 
 tabsControl.addEventListener('click', (event) => {
   const button = event.target.closest('.tabs-control__button');
@@ -19,7 +32,17 @@ tabsControl.addEventListener('click', (event) => {
   button.classList.add('tabs-control__button--active');
 
   currentCategory = button.dataset.category;
-  filterProducts(currentCategory);
+  isLoaded = false;
+  updateProducts();
+});
+
+btnLoad.addEventListener('click', () => {
+  isLoaded = true;
+  updateProducts();
+});
+
+window.addEventListener('resize', () => {
+  updateProducts();
 });
 
 async function getProducts() {
@@ -30,7 +53,7 @@ async function getProducts() {
     }
     const products = await response.json();
     allProducts = products;
-    filterProducts(currentCategory);
+    updateProducts();
   } catch (error) {
     console.error('Error fetching products:', error);
   }
