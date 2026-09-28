@@ -1,4 +1,26 @@
 const tabsContentList = document.querySelector('.tabs-content__list');
+const tabsControl = document.querySelector('.tabs-control');
+const tabButtons = document.querySelectorAll('.tabs-control__button');
+let allProducts = [];
+let currentCategory = 'coffee';
+
+function filterProducts(category) {
+  const filtered = allProducts.filter((item) => item.category === category);
+  renderProducts(filtered);
+}
+
+tabsControl.addEventListener('click', (event) => {
+  const button = event.target.closest('.tabs-control__button');
+    if (!button || button.classList.contains('tabs-control__button--active')) {
+    return;
+  }
+
+  tabButtons.forEach((btn) => btn.classList.remove('tabs-control__button--active'));
+  button.classList.add('tabs-control__button--active');
+
+  currentCategory = button.dataset.category;
+  filterProducts(currentCategory);
+});
 
 async function getProducts() {
   try {
@@ -7,7 +29,8 @@ async function getProducts() {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const products = await response.json();
-    renderProducts(products);
+    allProducts = products;
+    filterProducts(currentCategory);
   } catch (error) {
     console.error('Error fetching products:', error);
   }
