@@ -47,7 +47,7 @@ window.addEventListener('resize', () => {
 
 async function getProducts() {
   try {
-    const response = await fetch('./src/data/data.json');
+    const response = await fetch('./data/data.json');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -64,7 +64,7 @@ function createItem(item){
     return`
      <li class="tabs-content__item">
           <div class="tabs-content__item-image-wrapper">
-            <img src="./src/images/menu-page/${item.image}" alt="${item.name}" width="24" height="24" />
+            <img src="./images/menu-page/${item.image}" alt="${item.name}" width="24" height="24" />
           </div>
           <div class="tabs-content__item-wrapper">
             <h3 class="tabs-content__item__text-wrapper__title">${item.name}</h3>
