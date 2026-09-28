@@ -1,4 +1,5 @@
 @use "modern-normalize";
+@use "./burger-menu";
 @import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
 
 :root {
@@ -21,17 +22,26 @@
     --color-bg-page: #292825;
     --color-border-primary: #665f55;
     --color-border-inverse: #c1b6ad;
-  }
-}
+    .header__menu-btn img,
+    .header__burger-btn img,
+    .header__mobile-menu-btn img {
+      filter: invert(1);
+    }
 
-:root.dark {
-  .header__menu-btn img,
-  .header__burger-btn img {
-    filter: invert(1);
-  }
+    .header__logo img {
+      filter: brightness(2) contrast(0.9);
+    }
 
-  .header__logo img {
-    filter: brightness(2) contrast(0.9);
+    .header__burger-btn svg,
+    .header__mobile svg {
+      rect {
+        stroke: var(--color-border-primary);
+      }
+
+      path {
+        stroke: var(--color-text-primary);
+      }
+    }
   }
 }
 
