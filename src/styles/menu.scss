@@ -42,8 +42,7 @@
     outline: none;
 
     &.active,
-    &--active,
-    &:first-child:not(.inactive) {
+    &--active {
       background-color: var(--color-bg-overlay);
       color: var(--color-text-inverse);
       border-color: var(--color-bg-overlay);
@@ -55,6 +54,9 @@
 .tabs-content {
   width: 100%;
   margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__list {
     display: grid;
@@ -140,6 +142,35 @@
       line-height: 1.25;
       color: var(--color-text-primary);
       margin-top: 12px;
+    }
+  }
+
+  &__btn-load {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin-top: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border-primary);
+    background-color: transparent;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+    svg {
+      transition: transform 0.5s ease;
+    }
+
+    &:hover {
+      background-color: var(--color-bg-overlay);
+      color: var(--color-text-inverse);
+      border-color: var(--color-bg-overlay);
+    }
+
+    &.visible {
+      display: flex;
     }
   }
 }
