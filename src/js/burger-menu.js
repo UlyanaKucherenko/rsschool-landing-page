@@ -25,3 +25,9 @@ window.addEventListener('resize', () => {
     closeMenu();
   }
 });
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+    closeMenu();
+  }
+});
